@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Test</title>
+    </head>
+
+    <body>
+     <header id="header1">
+       <img id="cheatsheet" src="cheatsheet.jpg" alt="logo du site" title="logo"/>
+        <div id="searchbar">
+         <span class="text">Que voulez-vous rechercher ?</span>
+          <form action="">
+            <input class="champ" type="text" placeholder="Recherchez..."/>
+            <input class="bouton" type="button" value="OK" />
+          </form>
+        </div>
+        <div id="navbar">
+             <ul id="menu">
+               <li>
+                <a href="http://btlknajib.github.io/accueil/">Accueil</a>
+              </li>
+
+              <li>
+                <a href="csunix.html">Unix </a>
+              </li>
+
+              <li>
+                <a href="http://btlknajib.github.io/cheatsheetlinux">Linux</a>
+              </li>
+
+              <li>
+               <a href="http://btlknajib.github.io/cheatsheetvim/">Vim </a>
+              </li>
+
+              <li>
+               <a href="http://btlknajib.github.io/cheatsheetgit/">Git & Github</a>
+              </li>
+            </ul>
+       </div>
+     </header>
+     <br>
+     <br>
+     <br>
+     <div class="margegauche">
+       <br>
+     </div>
+     <div class="margegauche2">
+       <br>
+     </div>
+     <section>
+
+       <h2>Les commandes basiques.</h2>
+
+       <h4>Visualiser le contenu d'un répertoire.</h4>
+
+<p><strong>ls [-FaRl]</strong> :  Liste le contenu d'un répertoire quelques options :<br>
+  <strong>-F</strong> : 	Positionne à la fin des noms un / pour les répertoires et un * pour les fichiers exécutables.<br>
+  <strong>-a</strong> : 	Affiche tous les fichiers, y compris les fichiers cachés.<br>
+  <strong>-R</strong> : 	Affichage récursif.<br>
+  <strong>-l</strong> : 	Description complète du contenu d'un répertoire (une ligne par fichier). Le premier caractère de la ligne indique le type du fichier :<br>
+    <strong>-</strong> : 	Standard.<br>
+    <strong>d</strong> : 	Répertoire.<br>
+  <strong>-d</strong> : 	Evite de lister le contenu d'un répertoire : si rep est un repertoire, ls -l rep listera le contenu du répertoire rep, alors que ls -ld rep listera la description du répertoire.</p>
+
+<h4>Changer de répertoire.</h4>
+
+<p><strong>cd chemin</strong> :
+  Change le répertoire courant pour celui specifié par le chemin.</p>
+<p><strong>cd</strong> :
+  Change le répertoire courant pour le home directory.</p>
+<p><strong>cd -</strong> :
+  Change le répertoire courant pour le répertoire précédent.</p>
+<p><strong>pwd</strong> (Print Working Directory) :
+  Affiche le chemin du répertoire courant.</p>
+
+<h4>Créer et détruire un répertoire.</h4>
+
+<p><strong>mkdir répertoire</strong> :
+  Création d'un répertoire.</p>
+<p><strong>rmdir répertoire</strong> :
+  Supprime un répertoire vide (pour supprimer un répertoire non vide, il faut utiliser la commande rm).</p>
+
+<h2>Commandes et manipulation des fichiers.</h2>
+<h4>Visualier le contenu d'un fichier.</h4>
+
+<p><strong>cat fich1 fich2</strong> :
+  concatène et affiche (sur la sortie standard) le contenu des fichiers.</p>
+<p><strong>paste fich1 fich 2</strong> :
+  concatène horizontalement les fichiers fich1 et fich2 et affiche (sur la sortie standard) le résultat.</p>
+<p><strong>more fich</strong> :
+  Visualise le contenu du ou des fichiers par page.<br>
+  Pour un fichier contenant plus d'une page :<br>
+    <strong>q ou Q</strong> :	Pour terminer la visualisation.<br>
+    <strong>RETURN</strong> : Pour visualiser une ligne supplémentaire.<br>
+    <strong>ESPACE</strong> :	Pour visualiser la page suivante.<br>
+    <strong>h</strong> : Pour obtenir de l'aide.</p>
+
+<h4>Imprimer un fichier.</h4>
+
+<p><strong>lp [-dimp] fichiers</strong> :
+  Imprime le ou les fichiers spécifiés sur l'imprimante par défaut ou sur celle spécifiée par l'option -d.</p>
+<p><strong>lpq</strong> :
+  Visualise la file d'impression courante.</p>
+<p><strong>lpstat [-t]</strong> :
+  Renvoie des informations sur l'état de l'imprimante par défaut et de sa queue d'impression.</p>
+<p><strong>cancel num_impression</strong> :
+  Détruit l'impression designée par num_impression (vous pouvez récupérer ce numéro par la commande lpq ou lpstat).</p>
+
+<h4>Chercher une chaîne de caractères dans un fichier.</h4>
+
+<p><strong>grep [-iv]</strong> :<br>
+    <strong>sans option</strong> : Recherche dans les fichiers les lignes contenant l'expression.<br>
+    <strong>-i</strong> : Pour ne pas tenir compte des majuscules/minuscules.<br>
+    <strong>-v</strong> : Pour afficher les lignes ne contenant pas l'expression spécifiée.</p>
+
+<h4>Faire une copie d'un fichier.</h4>
+
+<p><strong>cp source destination</strong><br>
+  Copie le fichier source dans le fichier destination.<br>
+  Si le fichier destination n'existe pas, il est créé. Sinon son contenu est ecrasé sans avertissement.<br>
+  Si la destination est un répertoire, alors la source peut être une liste de fichiers.</p>
+
+<h4>Déplacer ou changer le nom d'un fichier.</h4>
+
+<p><strong>mv source destination</strong> :
+  Renomme ou déplace le fichier source en destination. Si la destination est un répertoire, alors la source peut être une liste de fichiers.</p>
+
+  <h4>Détruire un fichier.</h4>
+
+<p><strong>rm [-irf] fichiers</strong> :
+   Efface les fichiers sans récupération.<br>
+     <strong>-i</strong> : 	Intéractif: demande une confirmation sur chaque fichier.<br>
+     <strong>-f</strong> : 	Force la suppression du fichier.<br>
+     <strong>-r</strong> : 	Resursivité: permet d'effacer un répertoire et son contenu.</p>
+
+<h4>Rechercher un fichier.</h4>
+
+<p><strong>find rep -nom -print</strong> :
+   Recherche le(s) fichier(s) caractérisé(s) par nom à partir du répertoire rep et affiche le résultat.</p>
+
+   <h2>Divers.</h2>
+<h4>Se connecter sur un autre compte.</h4>
+
+<p><strong>su [-] utilisateur</strong> :
+   Change l'utilisateur courant . Vous devez saisir le mot de passe du nouvel utilisateur.</p>
+
+
+    </section>
+    <footer>
+      <div class="footer">
+        <div class="info">
+          <div class="fb"><a href="https://www.facebook.com/najib.benidi"><img src="fb.png" width="30px" height="30px"/></a></div>
+          <div class="contact"><a href=""><img src="courier.png" width="30px" height="30px"/></a></div>
+          <div id="copyright">Cheatsheet.html| copyright© 2015 | Propulsé par Riendutout | réalisé par Najib Btlk</div>
+        </div>
+      </div>
+    </footer>
+    </body>
+</html>
